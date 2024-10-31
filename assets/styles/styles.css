@@ -1,0 +1,348 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts 
+
+font-family: "Oxanium", serif;
+font-family: "Questrial", sans-serif;
+
+*/
+
+::selection {
+    background-color: #0d722b7a;
+    color: #000;
+}
+
+::-webkit-selection {
+    background-color: #0d722b7a;
+    color: #000;
+}
+
+
+body {
+    font-family: "Questrial", sans-serif;
+}
+
+header {
+    background: transparent;
+    color: #ffffff;
+    padding: 10px 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+}
+.scrolled {
+    background: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand{
+    display: flex;
+    align-items: center;
+}
+.brand img{
+    width: 1.5rem;
+}
+.logo{
+    text-align: center;
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+/* nav */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1rem;
+    position: relative;
+    transition: border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid #0d722b;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #0d722b;
+}
+
+/* Video */
+.video-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 0 100px;
+}
+
+.overlay h1 {
+    font-size: clamp(2.5rem, 0.714rem + 4.762vw, 5rem);
+    font-family: "Oxanium", serif;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin: 10px 0 0;
+}
+
+/* Button */
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+.buttons a{
+    display: inline-block;
+    text-decoration: none;
+}
+.button1 {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #0d722b;
+    border: 2px solid #0d722b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: auto;
+    margin: 20px 0;
+    align-self: flex-start;
+    letter-spacing: 2px;
+}
+
+.button1:hover {
+    background-color: #189c3f;
+    transform: scale(1.05);
+}
+
+.button2 {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #0d722b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: auto;
+    margin: 20px 0;
+    align-self: flex-start;
+    letter-spacing: 2px;
+}
+
+.button2:hover {
+    background-color: #189c3f;
+    transform: scale(1.05);
+}
+
+/* rating */
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-text {
+    margin-right: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-top: -5px;
+}
+
+
+/* about */
+h1{
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+#about{
+    height: 100vh;
+    padding: 50px 100px;
+    background-color: #0f0f0f;
+}
+
+/* testimonials */
+
+#testimonials{
+    height: 100vh;
+    padding: 50px 100px;
+    background-color: #0a0a0a;
+}
+
+/* contact */
+
+#contact{
+    height: 100vh;
+    padding: 50px 100px;
+    background-color: #161616;
+}
+
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    header{
+        padding: 10px 50px;
+        background-color: #000;
+    }
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding-bottom: 30px;
+        background: #000000;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+    .nav-links.show {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+    .nav-links a{
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    #hero{
+        align-content: center;
+        justify-items: center;
+        background-color: #000;
+    }
+    .video-container{
+        width: 80%;
+        margin-top: 80px;
+    }
+    .overlay{
+        position: relative;
+        background-color: #000;
+        padding: 20px 0;
+    }
+
+    #about{
+        padding: 50px;
+    }
+    #testimonials{
+        padding: 50px;
+    }
+    #contact{
+        padding: 50px;
+    }
+}
+
+/* Hide the hamburger menu in desktop view */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* From Uiverse.io by JulanDeAlb */ 
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
